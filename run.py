@@ -26,8 +26,8 @@ def create_users_from_file(file, nextcloudURL, overwriteUsers, app_user, app_pw)
             'email':        row[2].value,
             'displayName':  row[3].value,
             'groups[]':     [x.strip() for x in row[4].value.split(',')],
-            'quota':        "0 B",
-            'language':     "de"
+            'quota':        row[5].value,
+            'language':     row[6].value
         }
         r = requests.post(nextcloudURL+'/ocs/v1.php/cloud/users', data=payload, headers=headers, auth=auth)
         print(r)
