@@ -10,13 +10,11 @@ import os
 
 
 def create_users_from_file(file, nextcloudURL, overwriteUsers, app_user, app_pw):
-
     headers = {
         'OCS-APIRequest': 'true',
         'Content-Type': 'application/x-www-form-urlencoded'
     }
     auth = HTTPBasicAuth(app_user, app_pw)
-
     #open excel-file
     wb = openpyxl.load_workbook(file)
     ws = wb['create']
@@ -36,7 +34,6 @@ def create_users_from_file(file, nextcloudURL, overwriteUsers, app_user, app_pw)
         print(r.text)
     
 
-
 def parse_arguments(nc_url):
     """This is where the parsing of commandline arguments is defined.
     The --help helptext is generated implictly by argparse
@@ -47,6 +44,7 @@ def parse_arguments(nc_url):
     parser.add_argument('--overwriteUsers', default=False, type=bool, help="Set to true if you want to overwrite users")
     args = parser.parse_args()
     return args
+
 
 def main():
     load_dotenv()
