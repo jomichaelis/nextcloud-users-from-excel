@@ -12,7 +12,7 @@ User information include
 - language
 
 ## Install
-It is recommended to use venv to create an environment just for this project, but to necessary.
+It is recommended to use venv to create an environment just for this project, but not necessary.
 
 ```sh
 pip install requirements.txt
